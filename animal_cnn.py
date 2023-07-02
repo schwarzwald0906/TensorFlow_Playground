@@ -25,6 +25,7 @@ def main():
     y_test = to_categorical(y_test, num_classes)
 
     model = model_train(X_train, y_train)
+    model_eval(model, X_test, y_test)
 
 
 # CNNのモデル訓練の定義（後でチューニング必要）
