@@ -1,0 +1,12 @@
+/monkey/
+/boar/
+/crow
+/.history/
+x_test_aug.npy
+x_test.npy
+x_train_aug.npy
+x_train.npy
+y_test_aug.npy
+y_test.npy
+y_train_aug.npy
+y_train.npy

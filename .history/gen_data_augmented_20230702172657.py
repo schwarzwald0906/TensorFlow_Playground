@@ -56,6 +56,8 @@ x_train, x_val, y_train, y_val = model_selection.train_test_split(
     X_train, Y_train, test_size=0.2
 )
 np.save("./x_train_aug.npy", x_train)
+np.save("./x_val_aug.npy", x_val)
 np.save("./y_train_aug.npy", y_train)
+np.save("./y_val_aug.npy", y_val)
 np.save("./x_test_aug.npy", X_test)
 np.save("./y_test_aug.npy", Y_test)

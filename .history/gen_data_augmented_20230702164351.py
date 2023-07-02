@@ -29,13 +29,12 @@ for index, cls in enumerate(classes):
             X_test.append(data)
             Y_test.append(index)
         else:
-            # chapter33対応
-            #            X_train.append(data)
-            #            Y_train.append(index)
+            X_train.append(data)
+            Y_train.append(index)
 
             for angle in range(-20, 20, 5):
                 # 回転
-                img_r = image.rotate(angle)
+                img_r = imghdr.rotate(angle)
                 data = np.asarray(img_r)
                 X_train.append(data)
                 Y_train.append(index)
@@ -46,16 +45,15 @@ for index, cls in enumerate(classes):
                 X_train.append(data)
                 Y_train.append(index)
 
+#        X.append(data)
+#        Y.append(index)
 
-X_train = np.array(X_train)
-X_test = np.array(X_test)
-Y_train = np.array(Y_train)
-Y_test = np.array(Y_test)
 
-x_train, x_val, y_train, y_val = model_selection.train_test_split(
-    X_train, Y_train, test_size=0.2
-)
-np.save("./x_train_aug.npy", x_train)
-np.save("./y_train_aug.npy", y_train)
-np.save("./x_test_aug.npy", X_test)
-np.save("./y_test_aug.npy", Y_test)
+X = np.array(X)
+Y = np.array(Y)
+
+x_train, x_test, y_train, y_test = model_selection.train_test_split(X, Y)
+np.save("./x_train.npy", x_train)
+np.save("./x_test.npy", x_test)
+np.save("./y_train.npy", y_train)
+np.save("./y_test.npy", y_test)

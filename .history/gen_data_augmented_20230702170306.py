@@ -29,9 +29,8 @@ for index, cls in enumerate(classes):
             X_test.append(data)
             Y_test.append(index)
         else:
-            # chapter33対応
-            #            X_train.append(data)
-            #            Y_train.append(index)
+            X_train.append(data)
+            Y_train.append(index)
 
             for angle in range(-20, 20, 5):
                 # 回転
@@ -52,10 +51,10 @@ X_test = np.array(X_test)
 Y_train = np.array(Y_train)
 Y_test = np.array(Y_test)
 
-x_train, x_val, y_train, y_val = model_selection.train_test_split(
-    X_train, Y_train, test_size=0.2
+x_train, x_test, y_train, y_test = model_selection.train_test_split(
+    X_train, X_test, Y_train, Y_test
 )
 np.save("./x_train_aug.npy", x_train)
+np.save("./x_test_aug.npy", x_test)
 np.save("./y_train_aug.npy", y_train)
-np.save("./x_test_aug.npy", X_test)
-np.save("./y_test_aug.npy", Y_test)
+np.save("./y_test_aug.npy", y_test)
