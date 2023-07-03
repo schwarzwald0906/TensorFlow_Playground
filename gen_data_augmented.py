@@ -1,4 +1,3 @@
-import imghdr
 from PIL import Image
 import os, glob
 import numpy as np
